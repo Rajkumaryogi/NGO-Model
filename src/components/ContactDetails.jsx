@@ -41,7 +41,7 @@ const ContactDetails = () => {
     if (validateForm()) {
       try {
         // Send a POST request to the backend
-        const response = await fetch("http://localhost:4001/api/sendMessageRoute/send", {
+        const response = await fetch("https://ngo-model-backend.vercel.app/api/sendMessageRoute/send", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData), // Send form data as JSON

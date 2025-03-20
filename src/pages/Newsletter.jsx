@@ -31,7 +31,7 @@ const Newsletter = () => {
     setApiError(""); // Clear previous API errors
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:4001/api/newsLatter/subscribe", {
+        const response = await fetch("https://ngo-model-backend.vercel.app/api/newsLatter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: formData.email }), // Send email in the request body

@@ -44,7 +44,7 @@ const JoinUs = () => {
     setApiError(""); // Clear previous API errors
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:4001/api/volunteers/register", {
+        const response = await fetch("https://ngo-model-backend.vercel.app/api/volunteers/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),

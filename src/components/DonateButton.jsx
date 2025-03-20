@@ -21,7 +21,7 @@ const DonateButton = () => {
     try {
       // Step 1: Create an order by calling the backend API
       const { data } = await axios.post(
-        "http://localhost:4001/api/donations/razorpay",
+        "https://ngo-model-backend.vercel.app/api/donations/razorpay",
         { amount: donationAmount, currency: "INR" } // Convert amount to paisa
       );
 
@@ -38,7 +38,7 @@ const DonateButton = () => {
         handler: async function (response) {
           try {
             // Send the payment response to the backend for verification
-            await axios.post("http://localhost:4001/api/donations/razorpay/verify", response);
+            await axios.post("https://ngo-model-backend.vercel.app/api/donations/razorpay/verify", response);
             alert("🎉 Payment Successful! Thank you for your support.");
           } catch (error) {
             alert("⚠️ Payment verification failed. Please contact support.");
